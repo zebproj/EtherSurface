@@ -109,8 +109,8 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 		multiTouchView = new MultiTouchView(this, null);
 		
 		multiTouchView.setOnTouchListener(new OnTouchListener() {
-
 			public boolean onTouch(View v, MotionEvent event) {
+				multiTouchView.onTouchEvent(event);
 				final int action = event.getAction() & MotionEvent.ACTION_MASK;
 				switch(action) {
 				case MotionEvent.ACTION_DOWN:

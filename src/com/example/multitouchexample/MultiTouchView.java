@@ -18,13 +18,9 @@ import android.view.View;
 public class MultiTouchView extends View{
 	private static int SIZE = 70;
 	private class Circle extends PointF{
-		boolean isVisible = false;
 	}
 	private SparseArray<Circle> mActivePointers;
 	private Paint mPaint;
-	private int[] colors = { Color.BLUE, Color.GREEN, Color.MAGENTA,
-	      Color.BLACK, Color.CYAN, Color.GRAY, Color.RED, Color.DKGRAY,
-	      Color.LTGRAY, Color.YELLOW };
 	private Paint textPaint;
 	private Paint bgPaint;
 	private Paint circlePaint;
@@ -66,8 +62,6 @@ public class MultiTouchView extends View{
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent event){
-		int pointerIndex = event.getActionIndex();
-		//int pointerId = event.getPointerId(pointerIndex);
 		int maskedAction = event.getActionMasked();
 		
 		switch(maskedAction){

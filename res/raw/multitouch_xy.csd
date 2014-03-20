@@ -36,7 +36,7 @@ kmidi scale kx, 0, 8
 ;kamp = 1 - kamp
 ;kamp port kamp, 0.1
 
-kvib oscili ky * 0.8, 6, gisine
+kvib oscili ky * 0.4, 6, gisine
 kmidi = int(kmidi)
 knote tab kmidi, giscale
 knote = knote + 60 + kvib
