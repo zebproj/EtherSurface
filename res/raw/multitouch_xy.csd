@@ -13,6 +13,8 @@ gisine ftgen 0, 0, 4096, 10, 1
 
 gadel init 0
 
+gaL, gaR init 0
+
 instr 2
 a1 oscils 0.1, 400, 0
 outs a1, a1
@@ -30,23 +32,28 @@ kx port kx, 0.01
 ky port ky, 0.01
 
 ;kx = 1 - kx
-kmidi scale kx, 0, 8
 ;;kfreq port kfreq, 0.05
 ;kamp chnget Samp
 ;kamp = 1 - kamp
 ;kamp port kamp, 0.1
 
 kvib oscili ky * 0.4, 6, gisine
+kmidi scale kx, 0, 8
 kmidi = int(kmidi)
-knote tab kmidi, giscale
+;kmidi scale kx, 0, 7
+knote tablei kmidi, giscale
 knote = knote + 60 + kvib
 knote port knote, 0.03
 
-a1 foscili ky * 0.1, cpsmidinn(knote), 1, 1, ky * 3, gisine
+ktimb expcurve ky, 4
+
+a1 foscili ky * 0.05, cpsmidinn(knote), 1, 1, ktimb * 3, gisine
 aenv linsegr 0, 0.5, 1, 1, 0
 a1 = a1 * aenv
 outs a1, a1
-gadel = gadel + a1 * 0.2
+gadel = gadel + a1 * 0.1
+gaL = gaL + a1 * 0.1
+gaR = gaR + a1 * 0.1
 endin
 
 
@@ -59,11 +66,20 @@ clear gadel
 endin
 
 
+instr 999
+aL, aR reverbsc gaL, gaR, 0.985, 10000
+outs aL, aR
+clear gaL, gaR
+endin
+
+;instr Mixer
+;gaMainL clip 1, 0
+;endin
+
 </CsInstruments>
 <CsScore>
-f1 0 16384 10 1
-
-i888 0 360000
+i888 0 $INF
+i999 0 $INF
 ;i2 0 100 
 </CsScore>
 </CsoundSynthesizer>
