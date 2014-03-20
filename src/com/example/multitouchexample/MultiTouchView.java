@@ -34,6 +34,7 @@ public class MultiTouchView extends View{
 	float touchX[] = new float[10];
 	float touchY[] = new float[10];
 	
+	
 	public MultiTouchView(Context context, AttributeSet attrs){
 		super(context, attrs);
 		initView();
