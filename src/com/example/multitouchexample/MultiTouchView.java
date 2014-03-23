@@ -99,14 +99,6 @@ public class MultiTouchView extends View{
 			break;
 		}
 		case MotionEvent.ACTION_MOVE:{
-//			for(int size = event.getPointerCount(), i = 0; i < size; i++){
-//				PointF point = mActivePointers.get(event.getPointerId(i));
-//				if(point != null) {
-//					point.x = event.getX(i);
-//					point.y = event.getY(i);
-//				}
-//			}
-//			break;
 			for(int i = 0; i < event.getPointerCount(); i++) {
 				int pointerId = event.getPointerId(i);
 				int id = getTouchId(pointerId);
@@ -178,4 +170,5 @@ public class MultiTouchView extends View{
 		}
 		return -1;
 	}
+
 }

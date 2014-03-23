@@ -4,5 +4,10 @@
     <string name="app_name">PaulTouch</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="scale">Scale type</string>
+  	<string name="about">About</string>
+  	<string name="size">Size</string>
+  	<string name="key">Key</string>
+  	
+  	
 </resources>

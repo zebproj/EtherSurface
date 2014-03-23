@@ -7,13 +7,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.view.Window;
 
 import com.csounds.CsoundObj;
 import com.csounds.CsoundObjCompletionListener;
@@ -98,9 +100,12 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(false);
+	
 		for(int i = 0; i < touchIds.length; i++) {
 			touchIds[i] = -1;
 			touchX[i] = -1;
@@ -175,7 +180,7 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 			}
 			
 		});
-
+		
 
 		String csd = getResourceFileAsString(R.raw.multitouch_xy);
 		File f = createTempFile(csd);
@@ -227,5 +232,12 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 		}
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return true;
+	}
+	
 
 }
