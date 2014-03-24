@@ -1,0 +1,40 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/size_4"
+        android:showAsAction="always"
+        android:title="@string/size_4"/>
+    <item
+        android:id="@+id/size_5"
+        android:showAsAction="always"
+        android:title="@string/size_5"/>
+    <item
+        android:id="@+id/size_6"
+        android:showAsAction="always"
+        android:title="@string/size_6"/>
+    <item
+        android:id="@+id/size_7"
+        android:showAsAction="always"
+        android:title="@string/size_7"/>
+    <item
+        android:id="@+id/size_8"
+        android:showAsAction="always"
+        android:title="@string/size_8"/>
+   <item
+        android:id="@+id/size_9"
+        android:showAsAction="always"
+        android:title="@string/size_9"/>
+   <item
+        android:id="@+id/size_10"
+        android:showAsAction="always"
+        android:title="@string/size_10"/>
+   <item
+        android:id="@+id/size_11"
+        android:showAsAction="always"
+        android:title="@string/size_11"/>
+   <item
+        android:id="@+id/size_12"
+        android:showAsAction="always"
+        android:title="@string/size_12"/>
+</menu>

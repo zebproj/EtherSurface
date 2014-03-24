@@ -1,0 +1,26 @@
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+		android:id="@+id/octave_two"
+        android:showAsAction="always"
+        android:title="@string/octave_two"/>
+    <item
+		android:id="@+id/octave_one"
+        android:showAsAction="always"
+        android:title="@string/octave_one"/>
+    <item
+		android:id="@+id/octave_zero"
+        android:showAsAction="always"
+        android:title="@string/octave_zero"/>
+    <item
+		android:id="@+id/octave_neg_one"
+        android:showAsAction="always"
+        android:title="@string/octave_neg_one"/>
+    <item
+		android:id="@+id/octave_neg_two"
+        android:showAsAction="always"
+        android:title="@string/octave_neg_two"/>
+    
+</menu>

@@ -1,0 +1,54 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/key_C"
+        android:showAsAction="always"
+        android:title="@string/key_C"/>
+    <item
+        android:id="@+id/key_Cs"
+        android:showAsAction="always"
+        android:title="@string/key_Cs"/>
+    <item
+        android:id="@+id/key_D"
+        android:showAsAction="always"
+        android:title="@string/key_D"/>
+    <item
+        android:id="@+id/key_Ds"
+        android:showAsAction="always"
+        android:title="@string/key_Ds"/>
+    <item
+        android:id="@+id/key_E"
+        android:showAsAction="always"
+        android:title="@string/key_E"/>
+    <item
+        android:id="@+id/key_F"
+        android:showAsAction="always"
+        android:title="@string/key_F"/>
+    <item
+        android:id="@+id/key_Fs"
+        android:showAsAction="always"
+        android:title="@string/key_Fs"/>
+    <item
+        android:id="@+id/key_G"
+        android:showAsAction="always"
+        android:title="@string/key_G"/>
+    <item
+        android:id="@+id/key_Gs"
+        android:showAsAction="always"
+        android:title="@string/key_Gs"/>
+    <item
+        android:id="@+id/key_A"
+        android:showAsAction="always"
+        android:title="@string/key_A"/>
+    <item
+        android:id="@+id/key_As"
+        android:showAsAction="always"
+        android:title="@string/key_As"/>
+    <item
+        android:id="@+id/key_B"
+        android:showAsAction="always"
+        android:title="@string/key_B"/>
+
+    
+</menu>
