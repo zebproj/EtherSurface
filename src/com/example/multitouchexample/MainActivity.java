@@ -11,11 +11,15 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.PopupMenu;
+import android.widget.PopupMenu.OnMenuItemClickListener;
 
 import com.csounds.CsoundObj;
 import com.csounds.CsoundObjCompletionListener;
@@ -25,7 +29,7 @@ import csnd6.CsoundMYFLTArray;
 import csnd6.controlChannelType;
 
 public class MainActivity extends Activity implements
-CsoundObjCompletionListener, CsoundValueCacheable {
+CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	
 	
 	protected CsoundObj csoundObj = new CsoundObj();
@@ -36,9 +40,25 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 	int touchIds[] = new int[10];
 	float touchX[] = new float[10];
 	float touchY[] = new float[10];
+	
 	CsoundMYFLTArray touchXPtr[] = new CsoundMYFLTArray[10];
 	CsoundMYFLTArray touchYPtr[] = new CsoundMYFLTArray[10];
+	CsoundMYFLTArray numberOfNotes = new CsoundMYFLTArray();
+	
+	//Menu + UI stuff
+	int sizes[] = { R.id.size_4, R.id.size_5, R.id.size_6, R.id.size_7, R.id.size_8, 
+				R.id.size_9, R.id.size_10, R.id.size_11, R.id.size_12 };
 
+	int keys[] = { R.id.key_C, R.id.key_Cs, R.id.key_D, R.id.key_Ds, R.id.key_E,
+		R.id.key_F, R.id.key_Fs, R.id.key_G, R.id.key_Gs, R.id.key_A,
+			R.id.key_As, R.id.key_B };
+	int octaves[] = {
+		R.id.octave_two,
+		R.id.octave_one,
+		R.id.octave_zero,
+		R.id.octave_neg_one,
+		R.id.octave_neg_two
+	};	
 	protected int getTouchIdAssignment() {
 		for(int i = 0; i < touchIds.length; i++) {
 			if(touchIds[i] == -1) {
@@ -190,8 +210,6 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 		csoundObj.startCsound(f);
 		
 		setContentView(multiTouchView);
-
-
 	}
 
 	public void csoundObjComplete(CsoundObj csoundObj) {
@@ -209,6 +227,9 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 					String.format("touch.%d.y", i),
 					controlChannelType.CSOUND_CONTROL_CHANNEL);
 		}
+
+		numberOfNotes = csoundObj.getOutputChannelPtr("size", 
+					controlChannelType.CSOUND_CONTROL_CHANNEL);
 	}
 
 	public void updateValuesToCsound() {
@@ -220,6 +241,7 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 	}
 
 	public void updateValuesFromCsound() {
+		multiTouchView.numberOfNotes = numberOfNotes.GetValue(0);
 	}
 
 	public void cleanup() {
@@ -230,14 +252,106 @@ CsoundObjCompletionListener, CsoundValueCacheable {
 			touchYPtr[i].Clear();
 			touchYPtr[i] = null;
 		}
+		numberOfNotes.Clear();
+		numberOfNotes = null;
+
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.main, menu);
-	    return true;
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
 	}
 	
+	public void openSize(){
+		Log.d("activity", "Activity launched");
+		View myView = findViewById(R.id.size);
+		PopupMenu popup = new PopupMenu(this, myView);
+		
+		popup.setOnMenuItemClickListener(this);
+		
+		MenuInflater inflater = popup.getMenuInflater();
+		inflater.inflate(R.menu.sizes, popup.getMenu());
 
+		popup.show();
+	}
+	public void openKey(){
+		Log.d("activity", "Activity launched");
+		View myView = findViewById(R.id.key);
+		PopupMenu popup = new PopupMenu(this, myView);
+		
+		popup.setOnMenuItemClickListener(this);
+		
+		MenuInflater inflater = popup.getMenuInflater();
+		inflater.inflate(R.menu.keys, popup.getMenu());
+
+		popup.show();
+	}
+	public void openOctave(){
+		Log.d("activity", "Activity launched");
+		View myView = findViewById(R.id.octave);
+		PopupMenu popup = new PopupMenu(this, myView);
+		
+		popup.setOnMenuItemClickListener(this);
+		
+		MenuInflater inflater = popup.getMenuInflater();
+		inflater.inflate(R.menu.octaves, popup.getMenu());
+
+		popup.show();
+	}
+	public void setSize(int size){
+		Log.d("activity", "SetSize Launched");
+		csoundObj.sendScore(String.format("i100 0 0.5 %d", size));
+		multiTouchView.invalidate();
+	}
+	public void setKey(int key){
+		Log.d("activity", "SetKey Launched");
+		csoundObj.sendScore(String.format("i101 0 0.5 %d", key));
+		multiTouchView.invalidate();
+	}
+	public void setOctave(int oct){
+		Log.d("activity", "SetOctave Launched");
+		csoundObj.sendScore(String.format("i102 0 0.5 %d", oct));
+		multiTouchView.invalidate();
+	}
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch(item.getItemId()){
+		case R.id.size:
+			openSize();
+			return true;
+		case R.id.key:
+			openKey();
+			return true;
+		case R.id.octave:
+			openOctave();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	@Override
+	public boolean onMenuItemClick(MenuItem item) {
+			int id = item.getItemId();
+			for(int i = 0; i < sizes.length; i++){
+				if(id == sizes[i]){
+					setSize(i + 4);
+					return true;
+				}
+			}
+			for(int i = 0; i < keys.length; i++){
+				if(id == keys[i]){
+					setKey(i);
+					return true;
+				}
+			}
+			for(int i = 0; i < octaves.length; i++){
+				if(id == octaves[i]){
+					setOctave(6 - i);
+					return true;
+				}
+			}
+			return false;
+	}
 }

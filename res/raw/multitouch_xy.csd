@@ -8,12 +8,18 @@ nchnls=2
 ksmps=32
 sr = 44100
 
-giscale ftgen 0, 0, 8, -2, 0, 2, 4, 7, 9, 11, 12, 14
+giscale ftgen 0, 0, 12, -2, \
+0, 2, 4, 7, 9, 11, 12, 14, \
+16, 19, 21, 24
 gisine ftgen 0, 0, 4096, 10, 1
 
 gadel init 0
 
 gaL, gaR init 0
+
+gisize init 8
+gikey init 60
+gioct init 4
 
 instr 2
 a1 oscils 0.1, 400, 0
@@ -25,6 +31,8 @@ instr 1
 i_instanceNum = p4
 S_xName sprintf "touch.%d.x", i_instanceNum
 S_yName sprintf "touch.%d.y", i_instanceNum
+Spulse sprintf "pulse.%d", i_instanceNum
+
 kx chnget S_xName
 ky chnget S_yName
 
@@ -38,11 +46,11 @@ ky port ky, 0.01
 ;kamp port kamp, 0.1
 
 kvib oscili ky * 0.4, 6, gisine
-kmidi scale kx, 0, 8
+kmidi scale kx, 0, gisize
 kmidi = int(kmidi)
 ;kmidi scale kx, 0, 7
 knote tablei kmidi, giscale
-knote = knote + 60 + kvib
+knote = knote + gikey + kvib + 12 * (gioct + 1)
 knote port knote, 0.03
 
 ktimb expcurve ky, 4
@@ -57,7 +65,7 @@ gaR = gaR + a1 * 0.1
 endin
 
 
-instr 888
+instr 888 
 adel init 0
 adel delay gadel + adel * 0.7, .8
 adel butlp adel, 6000
@@ -72,6 +80,19 @@ outs aL, aR
 clear gaL, gaR
 endin
 
+instr 100;set size
+chnset p4, "size"
+gisize = p4
+endin
+
+instr 101;set key
+gikey = p4
+endin
+
+instr 102;set octave
+gioct = p4
+endin
+
 ;instr Mixer
 ;gaMainL clip 1, 0
 ;endin
@@ -80,6 +101,9 @@ endin
 <CsScore>
 i888 0 $INF
 i999 0 $INF
+i100 0 0.5 8
+i101 0 4 0
+
 ;i2 0 100 
 </CsScore>
 </CsoundSynthesizer>

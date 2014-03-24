@@ -8,6 +8,37 @@
   	<string name="about">About</string>
   	<string name="size">Size</string>
   	<string name="key">Key</string>
-  	
-  	
+	<string name="octave">Octave</string>
+    
+  	<string name="size_4">4</string>
+    <string name="size_5">5</string>
+  	<string name="size_6">6</string>
+	<string name="size_7">7</string>
+	<string name="size_8">8</string>
+	<string name="size_9">9</string>
+	<string name="size_10">10</string>
+	<string name="size_11">11</string>	
+	<string name="size_12">12</string>
+	
+	<string name="key_C">C</string>	
+	<string name="key_Cs">C#</string>	
+	<string name="key_D">D</string>	
+	<string name="key_Ds">D#</string>	
+	<string name="key_E">E</string>	
+	<string name="key_F">F</string>	
+	<string name="key_Fs">F#</string>	
+	<string name="key_G">G</string>	
+	<string name="key_Gs">G#</string>	
+	<string name="key_A">A</string>	
+	<string name="key_As">A#</string>	
+	<string name="key_B">B</string>	
+	
+	<string name="octave_zero">0</string>
+	<string name="octave_neg_one">-1</string>
+	<string name="octave_neg_two">-2</string>
+	<string name="octave_two">2</string>
+	<string name="octave_one">1</string>
+													
+	
+	
 </resources>

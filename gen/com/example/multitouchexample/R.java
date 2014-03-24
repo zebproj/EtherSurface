@@ -24,16 +24,47 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int about=0x7f090003;
-        public static final int key=0x7f090002;
-        public static final int scale=0x7f090000;
-        public static final int size=0x7f090001;
+        public static final int about=0x7f090011;
+        public static final int key=0x7f09000f;
+        public static final int key_A=0x7f09000a;
+        public static final int key_As=0x7f09000b;
+        public static final int key_B=0x7f09000c;
+        public static final int key_C=0x7f090001;
+        public static final int key_Cs=0x7f090002;
+        public static final int key_D=0x7f090003;
+        public static final int key_Ds=0x7f090004;
+        public static final int key_E=0x7f090005;
+        public static final int key_F=0x7f090006;
+        public static final int key_Fs=0x7f090007;
+        public static final int key_G=0x7f090008;
+        public static final int key_Gs=0x7f090009;
+        public static final int my_button=0x7f090000;
+        public static final int octave=0x7f090010;
+        public static final int octave_neg_one=0x7f090015;
+        public static final int octave_neg_two=0x7f090016;
+        public static final int octave_one=0x7f090013;
+        public static final int octave_two=0x7f090012;
+        public static final int octave_zero=0x7f090014;
+        public static final int scale=0x7f09000d;
+        public static final int size=0x7f09000e;
+        public static final int size_10=0x7f09001d;
+        public static final int size_11=0x7f09001e;
+        public static final int size_12=0x7f09001f;
+        public static final int size_4=0x7f090017;
+        public static final int size_5=0x7f090018;
+        public static final int size_6=0x7f090019;
+        public static final int size_7=0x7f09001a;
+        public static final int size_8=0x7f09001b;
+        public static final int size_9=0x7f09001c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int keys=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int octaves=0x7f080002;
+        public static final int sizes=0x7f080003;
     }
     public static final class raw {
         public static final int multitouch_xy=0x7f040000;
@@ -44,8 +75,35 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
         public static final int key=0x7f060006;
+        public static final int key_A=0x7f06001a;
+        public static final int key_As=0x7f06001b;
+        public static final int key_B=0x7f06001c;
+        public static final int key_C=0x7f060011;
+        public static final int key_Cs=0x7f060012;
+        public static final int key_D=0x7f060013;
+        public static final int key_Ds=0x7f060014;
+        public static final int key_E=0x7f060015;
+        public static final int key_F=0x7f060016;
+        public static final int key_Fs=0x7f060017;
+        public static final int key_G=0x7f060018;
+        public static final int key_Gs=0x7f060019;
+        public static final int octave=0x7f060007;
+        public static final int octave_neg_one=0x7f06001e;
+        public static final int octave_neg_two=0x7f06001f;
+        public static final int octave_one=0x7f060021;
+        public static final int octave_two=0x7f060020;
+        public static final int octave_zero=0x7f06001d;
         public static final int scale=0x7f060003;
         public static final int size=0x7f060005;
+        public static final int size_10=0x7f06000e;
+        public static final int size_11=0x7f06000f;
+        public static final int size_12=0x7f060010;
+        public static final int size_4=0x7f060008;
+        public static final int size_5=0x7f060009;
+        public static final int size_6=0x7f06000a;
+        public static final int size_7=0x7f06000b;
+        public static final int size_8=0x7f06000c;
+        public static final int size_9=0x7f06000d;
     }
     public static final class style {
         /** 

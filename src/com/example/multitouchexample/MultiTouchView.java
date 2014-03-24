@@ -1,5 +1,6 @@
 package com.example.multitouchexample;
 
+import csnd6.CsoundMYFLTArray;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -31,7 +32,9 @@ public class MultiTouchView extends View{
 	float touchX[] = new float[10];
 	float touchY[] = new float[10];
 	Path path = new Path();
-
+	double numberOfNotes = 8.0f;
+	double pulseMod[] = new double[10];
+	
 	public MultiTouchView(Context context, AttributeSet attrs){
 		super(context, attrs);
 		initView();
@@ -60,7 +63,10 @@ public class MultiTouchView extends View{
 		linePaint.setColor(Color.rgb(0x50, 0x72, 0xA7));
 		linePaint.setStyle(Paint.Style.STROKE);
 		linePaint.setStrokeJoin(Paint.Join.ROUND);
-		for(int i = 0; i < 10; i++) isVisible[i] = false;
+		for(int i = 0; i < 10; i++) {
+			isVisible[i] = false;
+			pulseMod[i] = 1;
+		}
 		for(int i = 0; i < touchIds.length; i++) {
 			touchIds[i] = -1;
 			touchX[i] = -1;
@@ -137,16 +143,18 @@ public class MultiTouchView extends View{
 	protected void onDraw(Canvas canvas){
 		canvas.drawPaint(bgPaint);
 		
-		for (int i = 1; i <= 7; i++){
-			path.moveTo((float)(this.getWidth() / 8.0) * i, 0);
-			path.lineTo((float)(this.getWidth() / 8.0) * i, this.getHeight());
+		for (int i = 1; i <= numberOfNotes - 1; i++){
+			path.moveTo((float)(this.getWidth() / numberOfNotes) * i, 0);
+			path.lineTo((float)(this.getWidth() / numberOfNotes) * i, this.getHeight());
 			canvas.drawPath(path, linePaint);
 			path.reset();
 		}
 		for(int i = 0; i < 10; i++){
 			if(isVisible[i]){
 				//mPaint.setColor(colors[i % 9]);
-				canvas.drawCircle(touchX[i], touchY[i], (float)SIZE, circlePaint);
+				canvas.drawCircle(touchX[i], touchY[i], 
+								(float)SIZE, 
+								circlePaint);
 			}
 		}
 		//canvas.drawText("Total Pointers: " + totalPointers, 10, 40, textPaint);
