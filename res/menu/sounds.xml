@@ -1,0 +1,16 @@
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/sound_1"
+        android:showAsAction="always"
+        android:title="@string/sound_1"/>
+    <item
+        android:id="@+id/sound_2"
+        android:showAsAction="always"
+        android:title="@string/scale_maj"/>
+    <item
+        android:id="@+id/sound_3"
+        android:showAsAction="always"
+        android:title="@string/sound_3"/>
+</menu>

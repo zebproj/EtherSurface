@@ -62,6 +62,7 @@ int menu scales 0x7f080004
 int menu sizes 0x7f080005
 int menu sounds 0x7f080006
 int raw etherpad 0x7f040000
+int raw out 0x7f040001
 int string about 0x7f060004
 int string action_settings 0x7f060001
 int string app_name 0x7f060000
