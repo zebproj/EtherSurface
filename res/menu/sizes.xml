@@ -37,4 +37,12 @@
         android:id="@+id/size_12"
         android:showAsAction="always"
         android:title="@string/size_12"/>
+   <item
+        android:id="@+id/size_13"
+        android:showAsAction="always"
+        android:title="@string/size_13"/>
+ 	<item
+        android:id="@+id/size_14"
+        android:showAsAction="always"
+        android:title="@string/size_14"/>
 </menu>

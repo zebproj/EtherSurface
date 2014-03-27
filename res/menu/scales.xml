@@ -1,0 +1,44 @@
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/scale_def"
+        android:showAsAction="always"
+        android:title="@string/scale_def"/>
+    <item
+        android:id="@+id/scale_maj"
+        android:showAsAction="always"
+        android:title="@string/scale_maj"/>
+    <item
+        android:id="@+id/scale_min"
+        android:showAsAction="always"
+        android:title="@string/scale_min"/>
+    <item
+        android:id="@+id/scale_pent"
+        android:showAsAction="always"
+        android:title="@string/scale_pent"/>
+    <item
+        android:id="@+id/scale_flam"
+        android:showAsAction="always"
+        android:title="@string/scale_flam"/>
+    <item
+        android:id="@+id/scale_blues"
+        android:showAsAction="always"
+        android:title="@string/scale_blues"/>
+    <item
+        android:id="@+id/scale_chrom"
+        android:showAsAction="always"
+        android:title="@string/scale_chrom"/>
+    <item
+        android:id="@+id/scale_whole"
+        android:showAsAction="always"
+        android:title="@string/scale_whole"/>
+    <item
+        android:id="@+id/scale_oct"
+        android:showAsAction="always"
+        android:title="@string/scale_oct"/>
+    <item
+        android:id="@+id/scale_bp"
+        android:showAsAction="always"
+        android:title="@string/scale_bp"/>
+</menu>

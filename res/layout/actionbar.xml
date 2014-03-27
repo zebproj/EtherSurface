@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="fill_horizontal"
+    android:background="#545454">
+    
+<TextView 
+    android:id="@+id/wayleft"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="" 
+    android:clickable="True"
+   	android:layout_marginLeft="20dp"
+   	android:textColorLink="#00FF00"/>
+
+<TextView
+    android:id="@+id/octaves"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/octave" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"    
+	android:textSize="18sp"
+    android:clickable="True"
+    android:layout_marginRight="20dp"
+    android:onClick="openOctave"/>
+<TextView
+    android:id="@+id/scales"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/scale" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"
+    android:textSize="18sp"
+    android:clickable="True"
+	android:layout_marginRight="20dp"
+    android:onClick="openScale"/>
+<TextView
+    android:id="@+id/keys"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/key" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"
+    android:textSize="18sp"
+    android:clickable="True"
+	android:layout_marginRight="20dp"
+    android:onClick="openKey"/>
+<TextView
+    android:id="@+id/sizes"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/size" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"
+    android:textSize="18sp"
+    android:clickable="True"
+	android:layout_marginEnd="20dp"
+    android:onClick="openSize"/>
+<TextView
+    android:id="@+id/about"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/about" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"
+    android:textSize="18sp"
+    android:clickable="True"
+	android:layout_marginEnd="20dp"
+    android:onClick="openAbout"/>
+
+
+</LinearLayout>
