@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="fill_horizontal"
+    android:layout_gravity="fill_horizontal|center"
     android:background="#545454">
     
 <TextView 
@@ -25,7 +25,7 @@
     android:background="?android:attr/selectableItemBackground"    
 	android:textSize="18sp"
     android:clickable="True"
-    android:layout_marginRight="20dp"
+    android:layout_marginRight="20dp"    
     android:onClick="openOctave"/>
 <TextView
     android:id="@+id/scales"
@@ -63,6 +63,18 @@
     android:clickable="True"
 	android:layout_marginEnd="20dp"
     android:onClick="openSize"/>
+<TextView
+    android:id="@+id/sounds"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/sounds" 
+    android:textColor="#FFFFFF"
+	android:gravity="left"
+    android:background="?android:attr/selectableItemBackground"
+    android:textSize="18sp"
+    android:clickable="True"
+	android:layout_marginEnd="20dp"
+    android:onClick="openSound"/>
 <TextView
     android:id="@+id/about"
     android:layout_width="wrap_content"

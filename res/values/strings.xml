@@ -9,6 +9,7 @@
     <string name="size">Size</string>
     <string name="key">Key</string>
     <string name="octave">Octave</string>
+    <string name="sounds">Sound</string>
     <string name="size_4">4</string>
     <string name="size_5">5</string>
     <string name="size_6">6</string>
@@ -33,11 +34,13 @@
     <string name="key_A">A</string>
     <string name="key_As">A#</string>
     <string name="key_B">B</string>
+    
     <string name="octave_zero">0</string>
     <string name="octave_neg_one">-1</string>
     <string name="octave_neg_two">-2</string>
     <string name="octave_two">2</string>
     <string name="octave_one">1</string>
+    
     <string name="scale_maj">Major</string>
     <string name="scale_min">Minor</string>
     <string name="scale_pent">Pentatonic</string>
@@ -51,5 +54,9 @@
     <string name="scale_def">Default</string>
     <string name="title_activity_about">AboutActivity</string>
 	<string name="bgcolor">#3b444b</string>
-	<string name="button_width">100dp</string>
+
+	<string name="sound_1">Ether Pad</string>
+	<string name="sound_2">Distorted Dreams</string>
+	<string name="sound_3">Xanpalamin</string>
+	
 </resources>

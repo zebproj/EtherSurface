@@ -11,6 +11,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -62,15 +63,20 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 		R.id.octave_neg_one,
 		R.id.octave_neg_two
 	};	
-	int scaleMajor[] = 		{ 0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19 };
-	int scaleMinor[] = 		{ 0, 2, 3, 5, 7, 8, 11, 12, 14, 15, 17, 19 };
-	int scalePent[] = 		{ 0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26 };
-	int scaleBlues[] =		{ 0, 3, 5, 6, 7, 10, 12, 15, 17, 18, 19, 22 };
-	int scaleChrom[] = 		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-	int scaleWhole[] = 		{ 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 };
-	int scaleOct[] = 		{ 0, 1, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18};
-	int scaleFlam[] = 		{ 0, 1, 4, 5, 7, 8, 11, 12, 13, 16, 17, 19 };
-	int scaleDefault[] = 	{ 0, 2, 4, 7, 9, 11, 12, 14, 16, 19, 21, 24 };
+	int sounds[] = {
+		R.id.sound_1,
+		R.id.sound_2,
+		R.id.sound_3
+	};
+	int scaleMajor[] = 		{ 0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23 };
+	int scaleMinor[] = 		{ 0, 2, 3, 5, 7, 8, 11, 12, 14, 15, 17, 19, 20, 23 };
+	int scalePent[] = 		{ 0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 30 };
+	int scaleBlues[] =		{ 0, 3, 5, 6, 7, 10, 12, 15, 17, 18, 19, 22, 24, 27 };
+	int scaleChrom[] = 		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
+	int scaleWhole[] = 		{ 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26 };
+	int scaleOct[] = 		{ 0, 1, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19, 21 };
+	int scaleFlam[] = 		{ 0, 1, 4, 5, 7, 8, 11, 12, 13, 16, 17, 19, 21, 22 };
+	int scaleDefault[] = 	{ 0, 2, 4, 7, 9, 11, 12, 14, 16, 19, 21, 24, 26, 28 };
 	int scaleBP[] = 		{ -1 };
 	protected int getTouchIdAssignment() {
 		for(int i = 0; i < touchIds.length; i++) {
@@ -134,6 +140,7 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		ActionBar actionBar = getActionBar();
 		
 		actionBar.setDisplayShowTitleEnabled(false);
@@ -329,6 +336,9 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 		openMenu("octaves");
 		
 	}
+	public void openSound(View view){
+		openMenu("sounds");
+	}
 	public void openScale(View view){
 		openMenu("scales");
 	}
@@ -364,16 +374,22 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 		csoundObj.sendScore(String.format("i102 0 0.5 %d", oct));
 		multiTouchView.invalidate();
 	}
+	public void setSound(int sound){
+		Log.d("activity", "SetOctave Launched");
+		csoundObj.sendScore(String.format("i104 0 0.5 %d", sound));
+		multiTouchView.invalidate();
+	}
 	public void setScale(int scale[]){
 		Log.d("activity", "SetScale Launched");
 		if(scale[0] == -1){
 		csoundObj.sendScore("i103 0 0.5 -1");
 		}else
 		csoundObj.sendScore(String.format("i103 0 0.5 " +
-				"%d %d %d %d %d %d %d %d %d %d %d %d", 
+				"%d %d %d %d %d %d %d %d %d %d %d %d %d %d", 
 				scale[0], scale[1], scale[2], scale[3],
 				scale[4], scale[5], scale[6], scale[7], 
-				scale[8], scale[9], scale[10], scale[11]));
+				scale[8], scale[9], scale[10], scale[11],
+				scale[12], scale[13]));
 		multiTouchView.invalidate();
 	}
 	public void openAbout(View view){
@@ -420,6 +436,13 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 			for(int i = 0; i < octaves.length; i++){
 				if(id == octaves[i]){
 					setOctave(6 - i);
+					return true;
+				}
+			}
+			
+			for(int i = 0; i < sounds.length; i++){
+				if(id == sounds[i]){
+					setSound(i);
 					return true;
 				}
 			}
