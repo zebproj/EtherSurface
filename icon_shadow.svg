@@ -89,7 +89,10 @@
        height="64"
        width="64"
        id="rect3859"
-       style="fill:#232323;fill-opacity:1;stroke:none;filter:url(#filter3877)" />
+       style="fill:#232323;fill-opacity:1;stroke:none;filter:url(#filter3877)"
+       inkscape:export-filename="/home/paul/workspace/EtherPad/icon_shadow.png"
+       inkscape:export-xdpi="173.86"
+       inkscape:export-ydpi="173.86" />
     <rect
        style="fill:#3b444b;fill-opacity:1;stroke:none"
        id="rect3834"
@@ -98,17 +101,26 @@
        x="0"
        y="0"
        rx="10"
-       ry="10" />
+       ry="10"
+       inkscape:export-filename="/home/paul/workspace/EtherPad/icon_shadow.png"
+       inkscape:export-xdpi="173.86"
+       inkscape:export-ydpi="173.86" />
     <path
        style="fill:none;stroke:#5072a7;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 16,0 c 0,64 0,64 0,64"
        id="path3836"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/paul/workspace/EtherPad/icon_shadow.png"
+       inkscape:export-xdpi="173.86"
+       inkscape:export-ydpi="173.86" />
     <path
        style="fill:none;stroke:#5072a7;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 48,0 0,64"
        id="path3838"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/paul/workspace/EtherPad/icon_shadow.png"
+       inkscape:export-xdpi="173.86"
+       inkscape:export-ydpi="173.86" />
     <path
        sodipodi:type="arc"
        style="fill:#e9d66b;fill-opacity:0.50196081;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
@@ -117,6 +129,9 @@
        sodipodi:cy="32"
        sodipodi:rx="24"
        sodipodi:ry="24"
-       d="M 56,32 A 24,24 0 1 1 8,32 24,24 0 1 1 56,32 z" />
+       d="M 56,32 A 24,24 0 1 1 8,32 24,24 0 1 1 56,32 z"
+       inkscape:export-filename="/home/paul/workspace/EtherPad/icon_shadow.png"
+       inkscape:export-xdpi="173.86"
+       inkscape:export-ydpi="173.86" />
   </g>
 </svg>

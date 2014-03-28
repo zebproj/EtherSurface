@@ -8,7 +8,7 @@
     <item
         android:id="@+id/sound_2"
         android:showAsAction="always"
-        android:title="@string/scale_maj"/>
+        android:title="@string/sound_2"/>
     <item
         android:id="@+id/sound_3"
         android:showAsAction="always"

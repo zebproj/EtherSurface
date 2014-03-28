@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -139,8 +140,10 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		super.onCreate(savedInstanceState);
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
 		ActionBar actionBar = getActionBar();
 		
 		actionBar.setDisplayShowTitleEnabled(false);

@@ -73,6 +73,7 @@ kstep scale kx, 0, gisize
 kstep = int(kstep)
 kstep port kstep, 0.03
 kpow = 3^((kstep)/13)
+print i(kpow)
 kcps = (cpsmidinn(gikey + 12 * (gioct + 1) + kvib) * kpow)
 kcps_flat = (cpsmidinn(gikey + 12 * (gioct + 1) ) * kpow)
 endif
@@ -101,7 +102,7 @@ elseif(gisound == 2) then
 ishift      =           .00666667               ;shift it 8/1200.
 ipch        =           cpspch(p4)              ;convert parameter 5 to cps.
 ioct        =           octpch(p4)              ;convert parameter 5 to oct.
-ksend = 0.2
+ksend = 0.5
 kadsr       linsegr      0, 1, 1.0, 5, 0 ;ADSR envelope
 kmodi       linsegr      0, 1, 5, 5, 0 ;ADSR envelope for I
 kmodi		=			ky * 5
