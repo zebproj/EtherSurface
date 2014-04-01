@@ -36,7 +36,6 @@ public class MultiTouchView extends View{
 	
 	private void initView(){
 		Resources r = getResources();
-		//SIZE = 80;
 		SIZE = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, r.getDisplayMetrics());
 		mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		mPaint.setColor(Color.BLUE);
@@ -144,13 +143,11 @@ public class MultiTouchView extends View{
 		}
 		for(int i = 0; i < 10; i++){
 			if(isVisible[i]){
-				//mPaint.setColor(colors[i % 9]);
 				canvas.drawCircle(touchX[i], touchY[i], 
 								(float)SIZE, 
 								circlePaint);
 			}
 		}
-		//canvas.drawText("Total Pointers: " + totalPointers, 10, 40, textPaint);
 
 	}
 	

@@ -11,8 +11,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -50,7 +48,6 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	CsoundMYFLTArray touchYPtr[] = new CsoundMYFLTArray[10];
 	CsoundMYFLTArray numberOfNotes = new CsoundMYFLTArray();
 	
-	//Menu + UI stuff
 	int sizes[] = { R.id.size_4, R.id.size_5, R.id.size_6, R.id.size_7, R.id.size_8, 
 				R.id.size_9, R.id.size_10, R.id.size_11, R.id.size_12, R.id.size_13, R.id.size_14};
 
@@ -98,7 +95,6 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	}
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 		csoundObj.stopCsound();
 		
@@ -130,7 +126,6 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 			fos.write(csd.getBytes());
 			fos.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -296,48 +291,13 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 	
 	public void openSize(View view){
 		openMenu("sizes");
-//		Log.d("activity", "Activity launched");
-//		View myView = findViewById(R.id.size);
-//		PopupMenu popup = new PopupMenu(this, myView);
-//		
-//		popup.setOnMenuItemClickListener(this);
-//		
-//		MenuInflater inflater = popup.getMenuInflater();
-//		inflater.inflate(R.menu.sizes, popup.getMenu());
-//		popup.show();
 	}
 	public void openKey(View view){
 		openMenu("keys");
-//		Log.d("activity", "Activity launched");
-//		View myView = findViewById(R.id.key);
-//		PopupMenu popup = new PopupMenu(this, myView);
-//		
-//		popup.setOnMenuItemClickListener(this);
-//		
-//		MenuInflater inflater = popup.getMenuInflater();
-//		inflater.inflate(R.menu.keys, popup.getMenu());
-//
-//		popup.show();
+
 	}
 	public void openOctave(View view){
-//		Log.d("activity", "Activity launched");
-//		String name = "octave";
-//		int id = getResources().getIdentifier(name, "id", getPackageName());
-//		int menuId = getResources().getIdentifier("octaves", "menu", getPackageName());
-//		View myView = findViewById(id);
-//		if(myView == null){
-//			myView = findViewById(R.id.wayleft);
-//		}
-//		PopupMenu popup = new PopupMenu(this, myView);
-//		
-//		popup.setOnMenuItemClickListener(this);
-//		
-//		MenuInflater inflater = popup.getMenuInflater();
-//		inflater.inflate(menuId, popup.getMenu());
-//		
-//		popup.show();
 		openMenu("octaves");
-		
 	}
 	public void openSound(View view){
 		openMenu("sounds");
@@ -399,27 +359,6 @@ CsoundObjCompletionListener, CsoundValueCacheable, OnMenuItemClickListener {
 		Intent intent = new Intent(this, AboutActivity.class);
 		startActivity(intent);
 	}
-//	public boolean onOptionsItemSelected(MenuItem item){
-//		switch(item.getItemId()){
-//		case R.id.sizes:
-//			openMenu("sizes");
-//			return true;
-//		case R.id.keys:
-//			openMenu("keys");
-//			return true;
-//		case R.id.octaves:
-//			openMenu("octaves");
-//			return true;
-//		case R.id.scales:
-//			openMenu("scales");
-//			return true;
-//		case R.id.about:
-//		//	openAbout();
-//			return true;
-//		default:
-//			return super.onOptionsItemSelected(item);
-//		}
-//	}
 	
 	@Override
 	public boolean onMenuItemClick(MenuItem item) {
