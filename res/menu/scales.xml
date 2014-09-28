@@ -41,4 +41,12 @@
         android:id="@+id/scale_bp"
         android:showAsAction="always"
         android:title="@string/scale_bp"/>
+    <item
+        android:id="@+id/scale_ot_low"
+        android:showAsAction="always"
+        android:title="@string/scale_ot_low"/>
+    <item
+        android:id="@+id/scale_ot_high"
+        android:showAsAction="always"
+        android:title="@string/scale_ot_high"/>
 </menu>

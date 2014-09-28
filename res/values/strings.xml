@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">EtherPad</string>
+    <string name="app_name">EtherSurface</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="scale">Scale</string>
@@ -50,6 +50,9 @@
 	<string name="scale_blues">Blues</string>
 	<string name="scale_oct">Octatonic</string>
     <string name="scale_bp">Bohlen-Pierce</string>
+    <string name="scale_ot_low">Overtone Series Low</string>
+    <string name="scale_ot_high">Overtone Series High</string>
+    
 	
     <string name="scale_def">Default</string>
     <string name="title_activity_about">AboutActivity</string>
@@ -58,5 +61,6 @@
 	<string name="sound_1">Ether Pad</string>
 	<string name="sound_2">Distorted Dreams</string>
 	<string name="sound_3">Xanpalamin</string>
-	
+	<string name="giveitatri">Give it a Tri</string>
+	<string name="digitalmonk">Digital Monk</string>	
 </resources>

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.zebproj.etherpad.MainActivity"
+            android:name="com.zebproj.ethersurface.MainActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.zebproj.etherpad.AboutActivity"
+            android:name="com.zebproj.ethersurface.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
     </application>

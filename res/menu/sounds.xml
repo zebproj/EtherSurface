@@ -13,4 +13,12 @@
         android:id="@+id/sound_3"
         android:showAsAction="always"
         android:title="@string/sound_3"/>
+    <item
+        android:id="@+id/giveitatri"
+        android:showAsAction="always"
+        android:title="@string/giveitatri"/>
+    <item
+        android:id="@+id/digitalmonk"
+        android:showAsAction="always"
+        android:title="@string/digitalmonk"/>
 </menu>

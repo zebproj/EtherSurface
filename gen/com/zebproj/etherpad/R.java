@@ -26,6 +26,8 @@ public final class R {
     public static final class id {
         public static final int about=0x7f090006;
         public static final int action_settings=0x7f090008;
+        public static final int digitalmonk=0x7f090035;
+        public static final int giveitatri=0x7f090034;
         public static final int key_A=0x7f090012;
         public static final int key_As=0x7f090013;
         public static final int key_B=0x7f090014;
@@ -54,24 +56,26 @@ public final class R {
         public static final int scale_maj=0x7f09001b;
         public static final int scale_min=0x7f09001c;
         public static final int scale_oct=0x7f090022;
+        public static final int scale_ot_high=0x7f090025;
+        public static final int scale_ot_low=0x7f090024;
         public static final int scale_pent=0x7f09001d;
         public static final int scale_whole=0x7f090021;
         public static final int scales=0x7f090002;
-        public static final int size_10=0x7f09002a;
-        public static final int size_11=0x7f09002b;
-        public static final int size_12=0x7f09002c;
-        public static final int size_13=0x7f09002d;
-        public static final int size_14=0x7f09002e;
-        public static final int size_4=0x7f090024;
-        public static final int size_5=0x7f090025;
-        public static final int size_6=0x7f090026;
-        public static final int size_7=0x7f090027;
-        public static final int size_8=0x7f090028;
-        public static final int size_9=0x7f090029;
+        public static final int size_10=0x7f09002c;
+        public static final int size_11=0x7f09002d;
+        public static final int size_12=0x7f09002e;
+        public static final int size_13=0x7f09002f;
+        public static final int size_14=0x7f090030;
+        public static final int size_4=0x7f090026;
+        public static final int size_5=0x7f090027;
+        public static final int size_6=0x7f090028;
+        public static final int size_7=0x7f090029;
+        public static final int size_8=0x7f09002a;
+        public static final int size_9=0x7f09002b;
         public static final int sizes=0x7f090004;
-        public static final int sound_1=0x7f09002f;
-        public static final int sound_2=0x7f090030;
-        public static final int sound_3=0x7f090031;
+        public static final int sound_1=0x7f090031;
+        public static final int sound_2=0x7f090032;
+        public static final int sound_3=0x7f090033;
         public static final int sounds=0x7f090005;
         public static final int wayleft=0x7f090000;
     }
@@ -91,13 +95,16 @@ public final class R {
     }
     public static final class raw {
         public static final int etherpad=0x7f040000;
-        public static final int out=0x7f040001;
+        public static final int logo=0x7f040001;
+        public static final int out=0x7f040002;
     }
     public static final class string {
         public static final int about=0x7f060004;
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int bgcolor=0x7f060030;
+        public static final int bgcolor=0x7f060032;
+        public static final int digitalmonk=0x7f060037;
+        public static final int giveitatri=0x7f060036;
         public static final int hello_world=0x7f060002;
         public static final int key=0x7f060006;
         public static final int key_A=0x7f06001d;
@@ -122,11 +129,13 @@ public final class R {
         public static final int scale_blues=0x7f06002b;
         public static final int scale_bp=0x7f06002d;
         public static final int scale_chrom=0x7f060028;
-        public static final int scale_def=0x7f06002e;
+        public static final int scale_def=0x7f060030;
         public static final int scale_flam=0x7f060029;
         public static final int scale_maj=0x7f060025;
         public static final int scale_min=0x7f060026;
         public static final int scale_oct=0x7f06002c;
+        public static final int scale_ot_high=0x7f06002f;
+        public static final int scale_ot_low=0x7f06002e;
         public static final int scale_pent=0x7f060027;
         public static final int scale_whole=0x7f06002a;
         public static final int size=0x7f060005;
@@ -141,11 +150,11 @@ public final class R {
         public static final int size_7=0x7f06000c;
         public static final int size_8=0x7f06000d;
         public static final int size_9=0x7f06000e;
-        public static final int sound_1=0x7f060031;
-        public static final int sound_2=0x7f060032;
-        public static final int sound_3=0x7f060033;
+        public static final int sound_1=0x7f060033;
+        public static final int sound_2=0x7f060034;
+        public static final int sound_3=0x7f060035;
         public static final int sounds=0x7f060008;
-        public static final int title_activity_about=0x7f06002f;
+        public static final int title_activity_about=0x7f060031;
     }
     public static final class style {
         /** 
